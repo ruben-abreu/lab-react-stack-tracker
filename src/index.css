@@ -36,6 +36,20 @@ h1 {
   line-height: 1.1;
 }
 
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #747bff;
+  width: 100%;
+  font-weight: bold;
+  z-index: 100;
+  transition: top 0.3s;
+  color: #ffffff;
+  text-align: left;
+  padding: 20px;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -65,6 +79,46 @@ button:focus-visible {
 .card-list li {
   width: 48%;
   margin-bottom: 16px;
+}
+
+.company-header {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.company-description {
+  display: flex;
+  padding: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-description {
+  display: inline-block;
+  margin-left: 50px;
+  width: 50%;
+}
+
+.tech-stack-list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+}
+
+.tech-card {
+  background-color: whitesmoke;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-card-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (prefers-color-scheme: light) {

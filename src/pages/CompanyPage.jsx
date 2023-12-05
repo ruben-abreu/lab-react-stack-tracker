@@ -12,17 +12,26 @@ function CompanyPage({ companies }) {
 
   return (
     <div key={company.id}>
-      <p>{company.name}</p>
-      <img src={company.logo} alt={company.name} style={{ width: '50px' }} />
+      <p className='company-header'>{company.name}</p>
       <p>{company.website}</p>
-      <p>{company.description}</p>
-      <ul>
+      <div className='company-description'>
+        <img src={company.logo} alt={company.name} style={{ width: '100px' }} />
+        <p className='text-description'>{company.description}</p>
+      </div>
+      <Link to={'/'}>
+        <button>Back</button>
+      </Link>
+      <ul className='tech-stack-list'>
         {company.techStack.map(tech => (
-          <Link to={`/tech/${tech.slug}`} key={tech.id}>
-            <li key={tech.id}>
-              <img src={tech.image} style={{ width: '50px' }} />
-              {tech.name}
-            </li>
+          <Link to={`/tech/${tech.slug}?company=${slug}`} key={tech.id}>
+            <div className='tech-card-list'>
+              <li key={tech.id}>
+                <div className='tech-card'>
+                  <img src={tech.image} style={{ width: '50px' }} />
+                </div>
+                {tech.name}
+              </li>
+            </div>
           </Link>
         ))}
       </ul>
